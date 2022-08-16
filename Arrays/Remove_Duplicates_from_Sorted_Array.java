@@ -1,3 +1,22 @@
+// Newer approach
+class Solution {
+    public int removeDuplicates(int[] nums) 
+	{
+		int f = 1;
+		for(int i = 1; i<nums.length;i++)
+		{
+            if(nums[i-1] != nums[i]) // Whenever the prev element is not the same as the curr element, we know that we have moved on to a unique element. And the first element is always going to be a unique element
+            {
+                nums[f] = nums[i];
+                f++;
+            }	
+		}
+            return f;
+	}
+}
+
+
+/*
 class Solution {
     public int removeDuplicates(int[] nums) {
         int k = 0;
@@ -23,3 +42,4 @@ class Solution {
         return k;
     }
 }
+*/
